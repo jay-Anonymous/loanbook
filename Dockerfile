@@ -6,7 +6,7 @@ RUN npm install
 COPY / ./
 RUN npm run build
 
-FROM nginx:alpine
+FROM nginx:1.29.5-alpine3.23
 WORKDIR /usr/loanbook/
 
 COPY --from=client /usr/loanbook/build/ /usr/share/nginx/html
